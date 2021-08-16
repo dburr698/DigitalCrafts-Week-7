@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ToDo List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <h1 id="title">ToDo List</h1>
+
+    <div id="addTask">
+        <label for="taskTitle">Enter a Task: </label>
+        <input name="taskTitle" id="taskTitleTextBox" placeholder="i.e. Wash Car, Vaccum" required>
+        <label for="priority">Priority: </label>
+        <select name="priority" id="prioritySelect">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <div id="taskList">
+        <h3>Current Tasks</h3>
+        <ul id="taskUL">
+
+        </ul>
+    </div>
+
+    <script src="ToDo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: cadetblue;
+}
+
+#title {
+    background-color: lightgray;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+#addTask {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+#taskList {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 5px;
+}

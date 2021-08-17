@@ -1,0 +1,33 @@
+<html>
+    <head>
+    <title>Trips Page</title>
+    <link rel="stylesheet" href="/trips.css">
+    </head>
+
+    <body>
+        <h1>Destination Station!</h1>
+        <form method="POST" action="/trips">
+        <input type="text" name="cityName" placeholder="Enter Destination">
+        <input type="text" name="image" placeholder="Enter Image Url">
+        <label for="departureDate">Departure Date: </label>
+        <input type="date" name="departureDate">
+        <label for="returnDate">Return Date: </label>
+        <input type="date" name="returnDate">
+        <button>Add Trip</button>
+        </form>
+
+        <ul>
+        <h2>Planned Trips</h2>
+        {{#allTrips}} <!-- STARTS THE LOOP -->
+        <li>
+            <form method="POST" action="/delete-trip">
+            <img src={{imageURL}} width=500px/>
+            {{title}} - {{departureDate}} - {{returnDate}}
+            <input type="hidden" name="tripId" value={{tripId}}>
+            <button>Delete</button>
+            </form>
+        </li>
+        {{/allTrips}} <!-- END LOOP-->
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Movie Website</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <h1 id="pageTitle">My Movies Data Base</h1>
+        <form method="POST" action="/add-movie">
+            <input type="text" name="movieName" placeholder="Movie Title" required>
+            <input type="text" name="movieDesc" placeholder="Movie Description">
+            <label for="movieGenre">Genre: </label>
+            <select name="movieGenre" id="genre">
+                <option value="Action">Action</option>
+                <option value="Animation">Animation</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Historical">Historical</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Western">Western</option>
+            </select>
+            <input type="text" name="posterImage" placeholder="Movie Poster URL" required>
+            <button>Add Movie</button>
+        </form>
+
+
+        <ul id="moviesUL">
+            {{#allMovies}}
+            <li id="movieLI">
+                <form method="POST" action="/delete-movie">
+                    <a href="/{{movieId}}"><img src={{posterURL}} alt="poster" id="moviePoster"></a>
+                    <h3 id="movieTitle">{{title}}</h3>
+                    <input type="hidden" name="movieId" value={{movieId}}>
+                    <button>Delete</button>
+                </form>
+            </li>
+            {{/allMovies}}
+        </ul>
+    </body>
+</html>

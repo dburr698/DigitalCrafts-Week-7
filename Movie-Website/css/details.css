@@ -1,0 +1,21 @@
+body {
+    background-color: firebrick;
+    border: solid 5px;
+}
+
+img {
+    width: 500px;
+}
+
+#content {
+    display: flex;
+    margin: 10px;
+}
+
+#details {
+    margin: 20px;
+}
+
+#pageTitle {
+    text-align: center;
+}

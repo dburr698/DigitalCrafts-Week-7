@@ -1,0 +1,34 @@
+body {
+    background-color: firebrick;
+    border: solid 5px;
+}
+
+img {
+    width: 250px;
+}
+
+form {
+    text-align: center;
+}
+
+#moviesUL {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#movieLI {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#movieTitle {
+    text-align: center;
+}
+
+#pageTitle {
+    text-align: center;
+    margin: 10px;
+}
+

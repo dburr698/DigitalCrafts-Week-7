@@ -1,12 +1,14 @@
 <html>
     <head>
-    <title>Trips Page</title>
-    <link rel="stylesheet" href="/trips.css">
+        <title>Trips Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/trips.css">
     </head>
 
     <body>
         <h1>Destination Station!</h1>
-        <form method="POST" action="/trips">
+        <form method="POST" action="trips/add-trip">
         <input type="text" name="cityName" placeholder="Enter Destination">
         <input type="text" name="image" placeholder="Enter Image Url">
         <label for="departureDate">Departure Date: </label>
@@ -16,11 +18,15 @@
         <button>Add Trip</button>
         </form>
 
+        <form method="POST" action="trips/sign-out">
+            <button>Log Out</button>
+        </form>
+
         <ul>
         <h2>Planned Trips</h2>
         {{#allTrips}} <!-- STARTS THE LOOP -->
         <li>
-            <form method="POST" action="/delete-trip">
+            <form method="POST" action="trips/delete-trip">
             <img src={{imageURL}} width=500px/>
             {{title}} - {{departureDate}} - {{returnDate}}
             <input type="hidden" name="tripId" value={{tripId}}>

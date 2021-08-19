@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Login</h1>
+        
+        <form method='POST' action='/log-in'>
+            <input type="text" name="userName" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button>Login</button>   
+
+            <b>{{errorMessage}}</b> 
+        </form>
+        <a href="/register"><button>Sign Up</button></a>
+    </body>
+</html>

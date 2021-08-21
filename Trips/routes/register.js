@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/sign-up', (req, res) => {
-    const username = req.body.userName
+    const username = req.body.username
     const password = req.body.password
 
     let newUser = {username: username, password: password}

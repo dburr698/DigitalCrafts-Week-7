@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     res.render('trips', {allTrips: userTrips})
 })
 
-router.post('/delete-trip', (req, res) => {
+router.post('/delete-trip',  (req, res) => {
     const tripId = parseInt(req.body.tripId)
 
     trips = trips.filter((trip) => {
@@ -34,9 +34,12 @@ router.post('/add-trip', (req, res) => {
     res.redirect('/trips') 
 })
 
-router.post('/sign-out', (req, res) => {
-    req.session.username = ''
-    res.redirect('/')
+router.post('/sign-out',  (req, res) => {
+    req.session.destroy(error => {
+        res.clearCookie('connect.sid')
+        res.redirect('/')
+    })
+    
 })
 
 module.exports = router

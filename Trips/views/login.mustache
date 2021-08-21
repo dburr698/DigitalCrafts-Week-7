@@ -3,18 +3,24 @@
         <title>Login</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/css/login.css">
     </head>
     <body>
-        <h1>Login</h1>
         
-        <form method='POST' action='/log-in'>
-            <input type="text" name="userName" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <button>Login</button>   
-
-            <b>{{errorMessage}}</b> 
-        </form>
-        <a href="/register"><button>Sign Up</button></a>
+        <div class="bg-img">
+            <div class="container">
+                <form method='POST' action='/log-in'>
+                    <h1>Login</h1>
+                    <label for="username"><b>Username</b></label>
+                    <input type="text" name="username" placeholder="Enter Username">
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" name="password" placeholder="Enter Password">
+                    <button class="btn">Login</button>   
+                    <b>{{errorMessage}}</b> 
+                </form>
+                <p>Not a User?</p><a href="/register"><button>Sign Up</button></a>
+            </div>
+        </div>
+        
     </body>
 </html>

@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/log-in', (req, res) => {
-    const username = req.body.userName
+    const username = req.body.username
     const password = req.body.password
 
     const persistedUser = users.find(user => {

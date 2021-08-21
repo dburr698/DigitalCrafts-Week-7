@@ -1,24 +1,33 @@
 const express = require('express')
 const app = express()
-
+const http = require('http').Server(app) 
+// initialize socket.io
+const io = require('socket.io')(http)
 const session = require('express-session')
+const authenticate = require('./authenticate/authenticateMiddleware')
+
+const tripRouter = require('./routes/trips')
+const registerRouter = require('./routes/register')
+const loginRouter = require('./routes/login')
+
+app.use(express.urlencoded())
+
+// middleware for session
 app.use(session({
     secret: 'THISISSECRETKEY',
     saveUninitialized: true,
     resave: true
 }))
 
-app.use(express.urlencoded())
-app.use(express.static('public'))
 
-const tripRouter = require('./routes/trips')
-app.use('/trips', tripRouter)
-
-const loginRouter = require('./routes/login')
 app.use('/', loginRouter)
 
-const registerRouter = require('./routes/register')
 app.use('/register', registerRouter)
+
+app.use('/trips', authenticate, tripRouter)
+
+app.use(express.static('images'))
+app.use(express.static('public'))
 
 const mustacheExpress = require('mustache-express')
 
